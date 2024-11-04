@@ -1,0 +1,52 @@
+----------------------------------------------------------------------------------
+-- Engineer: Heet Vinodbhai Gadhiya
+-- 
+-- Create Date: 03.08.2023 12:33:23
+-- Design Name: 
+-- Module Name: PRIMENUMBERS - Behavioral
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity PRIMENUMBERS is
+    Port ( X : in STD_LOGIC_VECTOR (2 downto 0);
+           Prime : out STD_LOGIC);
+end PRIMENUMBERS;
+
+
+architecture Behavioral of PRIMENUMBERS is
+
+
+
+ begin
+ 
+ process(X)
+
+begin
+   
+ case X is
+    
+    when "010" => prime <='1';
+    when "011" => prime <='1';
+    when "101" => prime <='1';
+    when "111" => prime <='1';
+    when others => prime <= '0';
+    
+    
+    end case ;
+    end process;
+end Behavioral;
