@@ -1,0 +1,77 @@
+----------------------------------------------------------------------------------
+-- Engineer: Heet Vinodhai Gadhiya
+-- 
+-- Create Date: 03.08.2023 12:44:53
+-- Module Name: PRIMENUMBERS_tb
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity PRIMENUMBERS_tb is
+--  Port ( );
+end PRIMENUMBERS_tb;
+
+architecture Behavioral of PRIMENUMBERS_tb is
+
+COMPONENT PRIMENUMBERS is
+        port(X : in STD_LOGIC_VECTOR (2 downto 0);
+           Prime : out STD_LOGIC);
+END COMPONENT;
+
+SIGNAL X : std_logic_vector(2 downto 0) := (others => '0');
+SIGNAL prime : std_logic := '0';
+
+
+
+begin
+
+uut : PRIMENUMBERS
+
+PORT MAP( X => X,
+        prime => prime
+        );
+
+
+stim_p : process
+
+begin
+
+wait for 10 ns;
+x <= "000";
+wait for 10 ns;
+x <= "001";
+wait for 10 ns;
+x <= "000";
+wait for 10 ns;
+x <= "010";
+wait for 10 ns;
+x <= "011";
+wait for 10 ns;
+x <= "100";
+wait for 10 ns;
+x <= "101";
+wait for 10 ns;
+x <= "110";
+wait for 10 ns;
+x <= "111";
+
+wait;
+
+
+end process stim_p;
+end Behavioral;
